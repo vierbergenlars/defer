@@ -1,0 +1,18 @@
+{
+    "name": "vierbergenlars/defer",
+    "require-dev": {
+        "vierbergenlars/simpletest": "~1.1"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lars Vierbergen",
+            "email": "vierbergenlars@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "Defer\\": "lib"
+        }
+    }
+}

@@ -1,7 +1,18 @@
+---
 language: php
 php:
-  - 5.3.3
-  - 5.3
-  - 5.4
-before_script: composer install --dev
+- 5.3.3
+- 5.3
+- 5.4
+env:
+  global:
+    - COMPOSER_NO_INTERACTION=1
+    - secure: ! 'D9Eg+J1Y1+egvsRnLx8gMQTLxBgTY5PalBd3WgCRH2TPoSdj+4xHHnAHSEcq
+
+      MwryZe7WW7FaDv71NpLHEB0+6ofJzxMVlZBj+varTy6vpyBfvmRNbii69+Eq
+
+      +xGhrpOUs66jX6QL4YfJscU2Gse8baifPT8S02ok+KhSb2nhmYg='
+before_script: 
+ - chmod +x test/setup_composer.sh; test/setup_composer.sh
+ - composer install --dev
 script: php test/run.php

@@ -249,7 +249,7 @@ class Object
     {
         $docComment = $method->getDocComment();
         $startLoad = strpos($docComment, '@load');
-        if($startLoad === false) return false;
+        if($startLoad === false) return null;
         $endLoad = strpos($docComment, "\n", $startLoad);
         $loadPropsTag = substr($docComment, $startLoad, $endLoad-$startLoad);
         $loadProps = explode(' ', $loadPropsTag);

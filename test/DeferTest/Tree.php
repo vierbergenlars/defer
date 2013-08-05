@@ -24,10 +24,6 @@ class Tree implements \Defer\Deferrable
         return $this->children;
     }
 
-    /**
-     *
-     * @load id
-     */
     function getId()
     {
         return $this->id;

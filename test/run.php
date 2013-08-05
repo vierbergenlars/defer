@@ -64,4 +64,17 @@ class DeferTests extends \UnitTestCase
         $this->assertEqual($children[1]->getId(), 3);
         $this->assertEqual($children[2]->getId(), 4);
     }
+
+    function testBug1Regression()
+    {
+        $loader = new \DeferTest\Loader($this->struct);
+        $parent_ref = new Defer\Reference($loader, 5);
+        $children_refs = array();
+        foreach($this->struct[1] as $child)
+            $children_refs[] = new Defer\Reference($loader, $child);
+        $instance = Defer\Object::defer(array('id'=>1, 'parent'=> $parent_ref, 'children'=>$children_refs), 'DeferTest\\Tree');
+
+        $this->assertEqual($instance->getId(), 1);
+    }
+
 }

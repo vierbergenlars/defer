@@ -198,7 +198,6 @@ class Object
                 if($method->isStatic()) continue;
 
                 $props_to_load = self::parseDocComment($method);
-                if($props_to_load === null) continue;
 
                 $parameter_code = '';
                 $parameter_call_code = '';
@@ -249,7 +248,7 @@ class Object
     {
         $docComment = $method->getDocComment();
         $startLoad = strpos($docComment, '@load');
-        if($startLoad === false) return false;
+        if($startLoad === false) return null;
         $endLoad = strpos($docComment, "\n", $startLoad);
         $loadPropsTag = substr($docComment, $startLoad, $endLoad-$startLoad);
         $loadProps = explode(' ', $loadPropsTag);

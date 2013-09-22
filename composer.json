@@ -1,7 +1,7 @@
 {
     "name": "vierbergenlars/defer",
     "require-dev": {
-        "vierbergenlars/simpletest": "~1.1"
+        "simpletest/simpletest": "~1.1"
     },
     "license": "MIT",
     "authors": [
